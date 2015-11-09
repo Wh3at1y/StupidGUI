@@ -1,9 +1,7 @@
 package gui.view;
-import javax.swing.JPanel;
+import javax.swing.*;
 import gui.controller.GUIController;
-import javax.swing.JButton;
-import javax.swing.JTextField;
-import javax.swing.SpringLayout;
+import java.awt.event.*;
 
 public class GUIPanel extends JPanel
 {
@@ -35,6 +33,9 @@ public class GUIPanel extends JPanel
 		this.add(firstTextField);
 	}
 	
+	/**
+	 * Helper method to hold ugly GUI layout code.
+	 */
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 18, SpringLayout.SOUTH, firstTextField);
@@ -43,6 +44,12 @@ public class GUIPanel extends JPanel
 	
 	private void setupListeners()
 	{
-		
+		firstButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				firstTextField.setText("Really...?");
+			}
+		});
 	}
 }
