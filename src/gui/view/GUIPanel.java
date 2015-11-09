@@ -19,6 +19,7 @@ public class GUIPanel extends JPanel
 		firstTextField = new JTextField("Type words?");
 		baseLayout = new SpringLayout();
 		
+		
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -36,7 +37,8 @@ public class GUIPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 18, SpringLayout.SOUTH, firstTextField);
+		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 0, SpringLayout.WEST, this);
 	}
 	
 	private void setupListeners()
