@@ -9,6 +9,9 @@ package gui.controller;
 
 public class GUIRunner
 {
+	/**
+	 * @param args Used as this is a simple GUI.
+	 */
 	public static void main(String[]args)
 	{
 	GUIController startController = new GUIController();
