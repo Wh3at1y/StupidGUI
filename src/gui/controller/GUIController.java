@@ -16,9 +16,11 @@ public class GUIController
 	
 	public GUIController()
 	{
+		//(this) is a reference to this class (GUIController). Passing the class over to GUIFrame.
 		baseFrame = new GUIFrame(this);
 	}
 	
 	public void start()
 	{}
 }
+
