@@ -1,6 +1,8 @@
 package gui.view;
 import javax.swing.*;
+
 import gui.controller.GUIController;
+
 import java.awt.event.*;
 
 public class GUIPanel extends JPanel
@@ -17,7 +19,6 @@ public class GUIPanel extends JPanel
 		firstTextField = new JTextField("Type words?");
 		baseLayout = new SpringLayout();
 		
-		
 		setupPanel();
 		setupLayout();
 		setupListeners();
@@ -31,6 +32,7 @@ public class GUIPanel extends JPanel
 		this.setLayout(baseLayout); //Needs to be the first line of the setupPanel helper method.
 		this.add(firstButton);
 		this.add(firstTextField);
+		
 	}
 	
 	/**
