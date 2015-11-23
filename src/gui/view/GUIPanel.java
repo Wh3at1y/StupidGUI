@@ -43,7 +43,8 @@ public class GUIPanel extends JPanel
 	private void setupLayout()
 	{
 		baseLayout.putConstraint(SpringLayout.NORTH, firstButton, 18, SpringLayout.SOUTH, firstTextField);
-		baseLayout.putConstraint(SpringLayout.WEST, firstButton, 0, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.WEST, firstTextField, 0, SpringLayout.WEST, firstButton);
+		baseLayout.putConstraint(SpringLayout.EAST, firstTextField, 0, SpringLayout.EAST, this);
 	}
 	
 	private void setupListeners()
@@ -60,12 +61,18 @@ public class GUIPanel extends JPanel
 			{
 				public void mouseClicked(MouseEvent clicked)
 				{
-//					changeRandomColor();
+					if(SwingUtilities.isLeftMouseButton(clicked))
+					{
+						firstButton.setText("You just left clicked!");
+					}
+					else if(SwingUtilities.isRightMouseButton(clicked))
+					{
+						firstButton.setText("You just right clicked!");
+					}
 				}
 
 				public void mousePressed(MouseEvent pressed)
 				{
-					
 				}
 
 				public void mouseReleased(MouseEvent released)
@@ -88,10 +95,19 @@ public class GUIPanel extends JPanel
 			{
 				public void mouseMoved(MouseEvent moved)
 				{
+					firstTextField.setText("Mouse X: " + moved.getX() + " Mouse Y: " + moved.getY());
+					if((moved.getX() > 50 && moved.getX() < 100) && (moved.getY() > 50 && moved.getY() < 100))
+					{
+						changeRandomColor();
+					}
 				}
 				
 				public void mouseDragged(MouseEvent dragged)
 				{
+					if(dragged.isAltDown())
+					{
+						firstButton.setText("You held alt and dragged");
+					}
 				}
 			});
 	}
