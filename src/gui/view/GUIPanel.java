@@ -1,4 +1,5 @@
 package gui.view;
+
 import javax.swing.*;
 
 import gui.controller.GUIController;
@@ -53,5 +54,33 @@ public class GUIPanel extends JPanel
 				firstTextField.setText("Really...?");
 			}
 		});
+			
+			this.addMouseListener(new MouseListener()
+			{
+				public void mouseClicked(MouseEvent clicked)
+				{
+					
+				}
+
+				public void mousePressed(MouseEvent pressed)
+				{
+					
+				}
+
+				public void mouseReleased(MouseEvent released)
+				{
+					
+				}
+
+				public void mouseEntered(MouseEvent entered)
+				{
+					
+				}
+
+				public void mouseExited(MouseEvent exited)
+				{
+					
+				}
+			});
 	}
 }
