@@ -5,6 +5,7 @@ import javax.swing.*;
 import gui.controller.GUIController;
 
 import java.awt.event.*;
+import java.awt.Color;
 
 public class GUIPanel extends JPanel
 {
@@ -59,7 +60,7 @@ public class GUIPanel extends JPanel
 			{
 				public void mouseClicked(MouseEvent clicked)
 				{
-					
+					changeRandomColor();
 				}
 
 				public void mousePressed(MouseEvent pressed)
@@ -82,5 +83,19 @@ public class GUIPanel extends JPanel
 					
 				}
 			});
+			
+			
+	}
+	
+	public void changeRandomColor()
+	{
+		int red, blue, green;
+		
+		red = (int) (Math.random() * 256);
+		blue = (int) (Math.random() * 256);
+		green = (int) (Math.random() * 256);
+		
+		this.setBackground(new Color(blue, red, green));
+		
 	}
 }
